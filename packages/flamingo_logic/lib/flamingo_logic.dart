@@ -1,0 +1,2 @@
+library flamingo_logic;
+

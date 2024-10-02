@@ -1,0 +1,24 @@
+name: flamingo_logic
+description: a StateCore helping you to manage your state in Flamingo Architecture be centelized and easy to use
+version: 8.1.4
+repository: https://github.com/masterfabric-mobile/flamingo/packages/flamingo_logic
+issue_tracker: https://github.com/masterfabric-mobile/flamingo/issues
+homepage: hhttps://github.com/masterfabric-mobile/flamingo
+documentation: https://flamingo.masterfabric.com
+topics: [states,logic,module, state-management]
+
+environment:
+  sdk: ">=2.12.0 <4.0.0"
+
+dependencies:
+  meta: ^1.3.0
+  logger: ^2.4.0
+
+dev_dependencies:
+  mocktail: ^1.0.0
+  stream_transform: ^2.0.0
+  test: ^1.18.2
+
+screenshots:
+  - description: The logo of the package
+    path: screenshots/logo.png
