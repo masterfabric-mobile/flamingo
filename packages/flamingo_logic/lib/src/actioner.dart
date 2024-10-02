@@ -60,7 +60,7 @@ class _Actioner<StateCore> implements Actioner<StateCore> {
             onError(error, stackTrace); // Call the user-defined error handler.
           } else {
             // Log the error using the logger package.
-            logger.e('Error occurred: $error + $stackTrace');
+            logger.e('Error occurred: $error\nStackTrace:$stackTrace');
             completer.completeError(error, stackTrace); // Complete with error if no handler is provided.
           }
         },
@@ -71,7 +71,7 @@ class _Actioner<StateCore> implements Actioner<StateCore> {
       await Future.any([future, completer.future]); // Wait for either the completer or the main future to complete.
     } catch (e, stackTrace) {
       // Catch any unexpected errors during stream processing.
-      logger.e('Unexpected error occurred: $e $stackTrace'); // Log the caught exception.
+      logger.e('Unexpected error occurred: $e\nStackTrace:$stackTrace'); // Log the caught exception.
     } finally {
       // Cleanup: Cancel the subscription and remove from disposables.
       if (subs != null) {
@@ -96,7 +96,7 @@ class _Actioner<StateCore> implements Actioner<StateCore> {
           call(onData(data));
         } catch (e, stackTrace) {
           // Catch any errors from the onData processing.
-          logger.e('Error in onData processing: $e  % $stackTrace'); // Log the caught exception.
+          logger.e('Error in onData processing: $e\nStackTrace: $stackTrace'); // Log the caught exception.
         }
       },
       onError: onError != null
@@ -106,7 +106,7 @@ class _Actioner<StateCore> implements Actioner<StateCore> {
                 call(onError(error, stackTrace)); // Call user-defined error handler.
               } catch (e, stackTrace) {
                 // Catch any errors from the error handler.
-                logger.e('Error in error handler: $e $stackTrace'); // Log the caught exception.
+                logger.e('Error in error handler: $e\nStackTrace: $stackTrace'); // Log the caught exception.
               }
             }
           : null, // No error handler provided.
