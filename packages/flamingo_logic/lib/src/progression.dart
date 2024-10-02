@@ -1,9 +1,6 @@
 import 'package:flamingo_logic/src/modify.dart'; // Importing the Modify class from the flamingo_logic package
 import 'package:meta/meta.dart'; // Importing the meta package for annotations like @immutable
-import 'package:logger/logger.dart'; // Importing the logger package for logging errors
-
-// Creating a logger instance to log messages
-final logger = Logger();
+// Importing the logger package for logging errors
 
 @immutable // This annotation indicates that instances of this class cannot change after being created
 class Progression<EventCore, StateCore> extends Modify<StateCore> {
